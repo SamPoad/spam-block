@@ -53,7 +53,10 @@ def prepare_table():
     )
 
     # VERIFY THE DATA WAS INSERTED
-    print(cursor.execute('SELECT * FROM known_fraud_item LIMIT 6'))
+    # verification = cursor.execute('SELECT * FROM known_fraud_item')
+    # print(f"{cursor.execute('SELECT * FROM known_fraud_item LIMIT 6')}")
+    # print(verification.fetchall())
+    print(cursor.execute('SELECT * FROM known_fraud_item LIMIT 6').fetchall())
 
 # CALL THE FUNCTION 
 prepare_table()
