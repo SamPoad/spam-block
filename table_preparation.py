@@ -17,7 +17,7 @@ def prepare_table():
         # cursor.execute("DROP TABLE known_fraud_item")
     except sqlite3.OperationalError:
         cursor.execute(
-            """"
+            """
             CREATE TABLE known_fraud_item (
                 id, 
                 item, 
