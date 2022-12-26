@@ -1,2 +1,3 @@
 monitor.db
 access_token.txt
+__pycache__/*
