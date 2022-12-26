@@ -30,7 +30,30 @@ def prepare_table():
             """
         )
         print("Table: known_fraud_item created successfully")
+    
+    # PUT DATA INTO THE TABLE 
+    # FIRST BATCH ARE THOSE THAT ARE WITHOUT AN EXPIRY_DATE 
+    cursor.execute(
+        """
+        INSERT INTO known_fraud_item (item, item_type, create_date) VALUES (
+            'bruce.wayne@w_enterprises.com', 'email', CURRENT_TIMESTAMP), (
+            'batman@batcave.com', 'email', CURRENT_TIMESTAMP), (
+            'ckent@dailyplanet.com', 'email', CURRENT_TIMESTAMP)
+        """
+    )
 
+    # SECOND BATCH HAVE AN EXPIRATION DATE
+    cursor.execute(
+        """
+        INSERT INTO known_fraud_item (item, item_type, create_date, expiry_date) VALUES (
+            'tony@starkindustries.com', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00'), (
+            'steverogers@whitehouse.gov', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00'), (
+            'pparker@dailybugle.com', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00')
+        """
+    )
+
+    # VERIFY THE DATA WAS INSERTED
+    print(cursor.execute('SELECT * FROM known_fraud_item LIMIT 6'))
 
 # CALL THE FUNCTION 
 prepare_table()
