@@ -23,4 +23,5 @@ print("Showing temporarily blocked emails addresses")
 print([_ for _ in temporary_blocks])
 
 # for row in cursor.execute("SELECT * FROM known_fraud_item"): 
-#    print(row)
+#    print(row) 
+
