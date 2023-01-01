@@ -19,7 +19,7 @@ def prepare_table():
         cursor.execute(
             """
             CREATE TABLE known_fraud_item (
-                id, 
+                id INTEGER PRIMARY KEY AUTOINCREMENT, 
                 item, 
                 item_type,
                 create_date, 
