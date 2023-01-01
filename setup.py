@@ -1,0 +1,1 @@
+# This script will serve as the initial setup script to prepare the environment. 
