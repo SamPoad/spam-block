@@ -35,20 +35,20 @@ def prepare_table():
     # FIRST BATCH ARE THOSE THAT ARE WITHOUT AN EXPIRY_DATE 
     cursor.execute(
         """
-        INSERT INTO known_fraud_item (id, item, item_type, create_date) VALUES (
-            0, 'bruce.wayne@w_enterprises.com', 'email', CURRENT_TIMESTAMP), (
-            1, 'batman@batcave.com', 'email', CURRENT_TIMESTAMP), (
-            2, 'ckent@dailyplanet.com', 'email', CURRENT_TIMESTAMP)
+        INSERT INTO known_fraud_item (item, item_type, create_date) VALUES (
+            'bruce.wayne@w_enterprises.com', 'email', CURRENT_TIMESTAMP), (
+            'batman@batcave.com', 'email', CURRENT_TIMESTAMP), (
+            'ckent@dailyplanet.com', 'email', CURRENT_TIMESTAMP)
         """
     )
 
     # SECOND BATCH HAVE AN EXPIRATION DATE
     cursor.execute(
         """
-        INSERT INTO known_fraud_item (id, item, item_type, create_date, expiry_date) VALUES (
-            3, 'tony@starkindustries.com', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00'), (
-            4, 'steverogers@whitehouse.gov', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00'), (
-            5, 'pparker@dailybugle.com', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00')
+        INSERT INTO known_fraud_item (item, item_type, create_date, expiry_date) VALUES (
+            'tony@starkindustries.com', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00'), (
+            'steverogers@whitehouse.gov', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00'), (
+            'pparker@dailybugle.com', 'email', CURRENT_TIMESTAMP, '2022-12-25 00:00:00')
         """
     )
 
